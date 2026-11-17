@@ -1,0 +1,278 @@
+/* Shared course stylesheet — every lesson/reference/assessment links this. */
+:root {
+  --ink: #1b1a18;
+  --muted: #6f6960;
+  --paper: #fcfbf8;
+  --panel: #f5f1e9;
+  --rule: #e3ddd2;
+  --accent: #9b2226;      /* deep red */
+  --accent-soft: #f6ebe9;
+  --gold: #b98a1f;
+  --good: #2f6f4f;
+  --measure: 44rem;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Charter, Georgia, serif;
+  --sans: ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.62;
+  padding: 3.5rem 1.25rem 7rem;
+}
+
+.page { max-width: var(--measure); margin: 0 auto; }
+
+/* ---- Masthead ---- */
+.masthead { border-bottom: 3px double var(--rule); padding-bottom: 1.4rem; margin-bottom: 2rem; }
+.kicker {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+h1 { font-size: 2.35rem; line-height: 1.12; margin: 0 0 0.6rem; letter-spacing: -0.01em; }
+.lede { font-size: 1.12rem; color: var(--muted); margin: 0; font-style: italic; }
+.meta {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+}
+.pill {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-weight: 600;
+}
+
+/* ---- Sections ---- */
+section { margin: 3rem 0; }
+h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.3rem;
+  line-height: 1.2;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+h2 .num {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--paper);
+  background: var(--accent);
+  border-radius: 4px;
+  padding: 0.15rem 0.45rem;
+  flex: none;
+}
+h3 { font-size: 1.08rem; margin: 1.8rem 0 0.5rem; font-family: var(--sans); letter-spacing: 0.01em; }
+.section-intro { color: var(--muted); margin: 0.2rem 0 1.2rem; font-size: 0.98rem; }
+
+/* ---- Boxes ---- */
+.box {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0;
+  font-size: 0.95rem;
+}
+.box--info { border-left-color: var(--accent); background: var(--accent-soft); }
+.box--warn { border-left-color: var(--gold); }
+.box h4 { margin: 0 0 0.4rem; font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.box p:last-child, .box ul:last-child { margin-bottom: 0; }
+
+/* ---- Task lists ---- */
+ol.tasks { padding-left: 1.4rem; }
+ol.tasks > li { margin: 0.55rem 0; padding-left: 0.2rem; }
+ol.tasks > li::marker { font-family: var(--sans); font-size: 0.85rem; color: var(--accent); font-weight: 700; }
+ul.plain { padding-left: 1.1rem; }
+ul.plain li { margin: 0.3rem 0; }
+
+/* Fill-in-the-gap blank */
+.gap {
+  display: inline-block;
+  min-width: 6rem;
+  border-bottom: 1.5px solid var(--ink);
+  margin: 0 0.15rem;
+  height: 1em;
+}
+.gap--sm { min-width: 3.5rem; }
+
+/* German example text */
+.de { font-style: normal; }
+.emph { color: var(--accent); font-weight: 600; }
+.hint { color: var(--muted); font-size: 0.88rem; }
+
+/* ---- Self-assessment table ---- */
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+th, td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-family: var(--sans); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+td.scale { text-align: center; color: var(--muted); font-family: var(--sans); letter-spacing: 0.35em; white-space: nowrap; }
+
+/* ---- Reading passage ---- */
+.passage {
+  border-left: 3px solid var(--rule);
+  padding-left: 1.2rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+.passage p { margin: 0.7rem 0; }
+.passage .title { font-weight: 700; font-family: var(--sans); font-size: 0.95rem; }
+
+/* ---- Speaker button (assets/speak.js) ---- */
+.speak-btn {
+  font: inherit;
+  line-height: 1;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.18rem 0.3rem;
+  margin: 0 0.1rem 0 0.35rem;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 0.15s, border-color 0.15s;
+}
+.speak-btn:hover { background: var(--accent-soft); border-color: var(--accent); }
+.speak-btn:active { transform: translateY(1px); }
+
+.speech-toolbar {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  z-index: 50;
+}
+.speech-toolbar input[type="range"] { vertical-align: middle; accent-color: var(--accent); }
+.speech-info { opacity: 0.75; white-space: nowrap; }
+
+/* ---- Footer ---- */
+footer {
+  margin-top: 4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+footer a { color: var(--accent); }
+
+a { color: var(--accent); text-underline-offset: 2px; }
+
+/* ---- Interactive drills (assets/drill.js) ---- */
+.drill-gap { white-space: nowrap; }
+.drill-input {
+  font: inherit;
+  width: 7.5rem;
+  padding: 0.05rem 0.4rem;
+  border: none;
+  border-bottom: 1.5px solid var(--accent);
+  background: #fff8f7;
+  color: inherit;
+  border-radius: 3px 3px 0 0;
+}
+.drill-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.drill-gap.ok .drill-input { border-bottom-color: var(--good); background: #eef7f1; }
+.drill-gap.no .drill-input { border-bottom-color: var(--accent); background: #fbeceb; }
+.drill-fb { font-family: var(--sans); font-size: 0.82rem; margin-left: 0.4rem; color: var(--muted); }
+.drill-gap.ok .drill-fb { color: var(--good); font-weight: 700; }
+.drill-gap.no .drill-fb { color: var(--accent); font-weight: 700; }
+.drill-score {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid var(--rule);
+  padding-top: 0.6rem;
+  margin-top: 1rem;
+}
+
+/* ---- Speaking practice (assets/sprechen.js) ---- */
+.sprechen-item { margin: 1.1rem 0 0.35rem; }
+.sprechen-bar { display: inline-flex; gap: 0.35rem; margin: 0 0 0.3rem; }
+.sprechen-btn {
+  font: inherit;
+  line-height: 1;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.2rem 0.35rem;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 0.15s, border-color 0.15s;
+}
+.sprechen-btn:hover:not(:disabled) { background: var(--accent-soft); border-color: var(--accent); }
+.sprechen-btn:disabled { opacity: 0.35; cursor: default; }
+.sprechen-btn.is-listening,
+.sprechen-btn.is-recording { background: var(--accent); border-color: var(--accent); color: #fff; }
+.sprechen-btn.is-recording { animation: sprechen-pulse 1s ease-in-out infinite; }
+@keyframes sprechen-pulse { 50% { opacity: 0.5; } }
+.sprechen-fb { display: block; font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin: 0 0 0.2rem; }
+.sprechen-fb.ok { color: var(--good); font-weight: 700; }
+.sprechen-fb.warn { color: var(--gold); font-weight: 700; }
+.sprechen-fb.no { color: var(--accent); font-weight: 700; }
+.sprechen-item.ok { border-left: 3px solid var(--good); padding-left: 0.7rem; }
+.sprechen-score {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid var(--rule);
+  padding-top: 0.6rem;
+  margin-top: 1rem;
+}
+
+/* ---- Story blocks ---- */
+.story {
+  margin: 1.4rem 0;
+  padding: 1.1rem 1.3rem;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+.story h3 { margin-top: 0; }
+.story p { margin: 0.6rem 0; }
+.story .ak { font-weight: 700; color: var(--accent); }
+
+/* ---- Verb marker (assets/speak.js stories, grammar tables) ---- */
+.vb { font-weight: 700; color: var(--gold); }
+
+/* ---- Print ---- */
+@media print {
+  :root { --paper: #fff; --ink: #000; --muted: #444; --panel: #f4f4f4; --accent: #000; --accent-soft: #eee; }
+  body { font-size: 11.5pt; padding: 0; }
+  .no-print, .speak-btn, .speech-toolbar { display: none !important; }
+  section { margin: 1.4rem 0; break-inside: avoid; }
+  h2 .num { background: #000; color: #fff; }
+  a { color: #000; text-decoration: none; }
+}

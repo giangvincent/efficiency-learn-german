@@ -1,0 +1,146 @@
+/* teach-site additions: nav sidebar, practice inputs, action buttons, corrections. */
+
+body { padding-left: 15.5rem; }
+
+/* ---- Left sidebar nav (server-injected) ---- */
+#lesson-nav {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 14rem;
+  overflow-y: auto;
+  background: var(--panel);
+  border-right: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  padding: 1.3rem 0.9rem 2rem;
+  z-index: 20;
+}
+.nav-head {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  margin: 0 0 0.7rem;
+}
+#lesson-nav ul { list-style: none; margin: 0; padding: 0; }
+#lesson-nav li { margin: 0.1rem 0; }
+#lesson-nav a {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.32rem 0.45rem;
+  border-radius: 6px;
+  line-height: 1.3;
+}
+#lesson-nav a:hover { background: #fff; }
+#lesson-nav a.active { background: #fff; font-weight: 700; box-shadow: inset 2px 0 0 var(--accent); }
+#lesson-nav .dot {
+  width: 0.55rem; height: 0.55rem;
+  border-radius: 50%;
+  flex: none;
+  background: transparent;
+  border: 1.5px solid var(--rule);
+}
+.nav-progress .dot,
+#lesson-nav li.nav-progress .dot { background: var(--gold); border-color: var(--gold); }
+.nav-corrected .dot,
+#lesson-nav li.nav-corrected .dot { background: var(--good); border-color: var(--good); }
+
+/* ---- Practice textareas ---- */
+.practice-ta {
+  display: block;
+  width: 100%;
+  margin: 0.6rem 0 0.2rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: #fff;
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+.practice-ta:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+li .practice-ta { margin-top: 0.45rem; }
+
+/* ---- Actions (bottom of lesson) ---- */
+#practice-actions {
+  margin: 2.5rem 0 1rem;
+  padding-top: 1.3rem;
+  border-top: 3px double var(--rule);
+}
+.action-btn {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+.action-btn:hover:not(:disabled) { filter: brightness(1.1); }
+.action-btn:disabled { opacity: 0.6; cursor: wait; }
+.action-btn--gold { background: var(--gold); border-color: var(--gold); margin-left: 0.6rem; }
+#practice-status { display: block; margin: 0.7rem 0 0; min-height: 1.2em; }
+
+/* ---- Corrections ---- */
+.correction {
+  margin: 0.5rem 0 1.2rem;
+  padding: 0.75rem 1rem 0.9rem;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+#correction-extra .correction,
+#correction-extra > h4 {
+  margin-top: 1.2rem;
+}
+.corr-title {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+.correction h5 { font-family: var(--sans); font-size: 0.88rem; margin: 0.9rem 0 0.35rem; }
+.correction p { margin: 0.4rem 0; }
+.correction ul, .correction ol { margin: 0.4rem 0; padding-left: 1.2rem; }
+.correction li { margin: 0.22rem 0; }
+.correction blockquote {
+  margin: 0.5rem 0;
+  padding: 0.4rem 0.8rem;
+  background: #fff;
+  border-radius: 6px;
+  border-left: 3px solid var(--gold);
+}
+.correction table { border-collapse: collapse; width: 100%; margin: 0.5rem 0; font-size: 0.87rem; background: #fff; }
+.correction th, .correction td { border: 1px solid var(--rule); padding: 0.3rem 0.5rem; text-align: left; }
+.correction th { font-family: var(--sans); font-size: 0.78rem; }
+.correction code { font-size: 0.86em; background: #fff; padding: 0 0.25em; border-radius: 4px; }
+.correction hr { border: none; border-top: 1px solid var(--rule); margin: 0.7rem 0; }
+
+/* ---- Narrow screens: sidebar folds to top ---- */
+@media (max-width: 900px) {
+  body { padding-left: 0; padding-top: 0; }
+  #lesson-nav {
+    position: static;
+    width: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+    padding: 0.9rem 1rem;
+  }
+  #lesson-nav ul { display: flex; flex-wrap: wrap; gap: 0.2rem; }
+}
